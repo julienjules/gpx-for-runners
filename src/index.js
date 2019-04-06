@@ -71,7 +71,7 @@ export default class GPX{
           lon = parseFloat( point.getAttribute( 'lon' ) ),
           lat = parseFloat( point.getAttribute( 'lat' ) ),
           elevation = ( point.getElementsByTagName( 'ele' )[0] ) ? point.getElementsByTagName( 'ele' )[0].textContent : this.getAverageElevation(),
-          time = point.getElementsByTagName( 'time' )[0].textContent;
+          time = ( point.getElementsByTagName( 'time' )[0] ) ? point.getElementsByTagName( 'time' )[0].textContent : "";
 
       trackpoints.push({
         lon: lon,
